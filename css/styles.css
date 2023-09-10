@@ -566,7 +566,7 @@ Subscribe form
   justify-content: center;
   align-items: center;
 
-  min-width: 169px;
+  min-width: 165px;
   height: 40px;
 
   padding: 8px 24px;
@@ -850,7 +850,7 @@ Modal Form
 }
 
 .modal-form-checkbox-icon {
-  fill: transparent;
+  fill: inherit;
 }
 
 input[type='checkbox']:checked ~ .modal-form-agreement-text > .modal-form-checkbox {
@@ -862,7 +862,7 @@ input[type='checkbox']:focus-visible ~ .modal-form-agreement-text > .modal-form-
   border-color: var(--iris);
 }
 
-input[type='checkbox']:checked ~ .modal-form-agreement-text > .modal-form-checkbox > .modal-form-checkbox-icon {
+input[type='checkbox']:checked ~ .modal-form-agreement-text > .modal-form-checkbox {
   fill: var(--cloud);
 }
 
@@ -874,7 +874,7 @@ input[type='checkbox']:checked ~ .modal-form-agreement-text > .modal-form-checkb
 }
 
 .modal-form-agreement-link {
-  color: var(--ocean);
+  color: var(--iris);
   text-decoration: underline;
 
   outline: transparent;

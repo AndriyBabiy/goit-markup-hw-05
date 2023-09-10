@@ -199,6 +199,7 @@ button {
   justify-content: center;
 
   max-width: 1440px;
+  margin: 0 auto;
   padding: 188px 0;
 }
 
@@ -461,6 +462,7 @@ Customers
 .footer {
   background-color: var(--navyblue);
   padding: 100px 0;
+  align-self: flex-end;
 }
 
 .footer-sections {
@@ -515,10 +517,95 @@ Customers
 .footer-socials .social-link:focus {
   background-color: var(--green);
 }
+
+/*
+--------------------- 
+Subscribe form
+---------------------
+*/
+
+.footer-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-form-header {
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.footer-form-subscribe-elements{
+  display: flex;
+  align-items: center;
+
+  gap: 40px;
+}
+.footer-form-subscribe-email-input {
+  min-width: 264px;
+
+  padding: 11px 8px;
+
+  border: 1px solid white;
+  border-radius: 4px;
+
+  background-color: var(--navyblue);
+
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+
+  color: white;
+
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+.footer-form-subscribe-email-input::placeholder {
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+
+  color: white;
+}
+
+.footer-form-subscribe-submit-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  min-width: 169px;
+  padding: 8px 24px;
+
+  margin: 0 auto;
+
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.64px;
+
+  background-color: var(--iris);
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+  transition: background-color var(--transition-standard);
+}
+
+.footer-form-subscribe-submit-button:hover,
+.footer-form-subscribe-submit-button:focus {
+  background-color: var(--ocean);
+}
+
+.footer-form-subscribe-icon {
+  fill: white;
+}
 /* #endregion */
 
 /* #region modal */
 
+/*
+--------------------- 
+Backdrop
+---------------------
+*/
 .backdrop {
   position: fixed;
   top: 0;
@@ -541,10 +628,17 @@ Customers
   visibility: hidden;
 }
 
+/*
+--------------------- 
+Modal Body 
+---------------------
+*/
+
 .modal {
   position: absolute;
   width: 408px;
   min-height: 584px;
+  padding: 72px 24px 24px 24px;
 
   top: 50%;
   left: 50%;
@@ -560,6 +654,12 @@ Customers
   background-color: var(--dairy);
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
 }
+
+/*
+--------------------- 
+Close button 
+---------------------
+*/
 
 .modal-button {
   position: absolute;
@@ -596,6 +696,216 @@ Customers
 .modal-button:hover .modal-close-button,
 .modal-button:focus .modal-close-button {
   fill: #FFFFFF;
+}
+
+/*
+--------------------- 
+Modal Form 
+---------------------
+*/
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-form-caption {
+  margin-bottom: 16px;
+  align-self: center;
+
+  font-weight: 500;
+  line-height: 1.5;
+  list-style-position: 0.02em;
+
+  color: var(--navyblue);
+}
+
+.modal-form-label {
+  display: block;
+
+  font-size: 12px;
+  line-height: 1.1666;
+  letter-spacing: 0.04em;
+
+  color: var(--lightslate);
+}
+
+.modal-form-label:not(.modal-form-agreement) {
+  margin-bottom: 4px;
+}
+
+.modal-form-field {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-form-field:not(:nth-of-type(n + 4)) {
+  margin-bottom: 8px;
+}
+
+.modal-form-input {
+  width: 100%;
+  height: 40px;
+
+  border-radius: 4px;
+  border: 1px solid var(--navyblue-modal);
+
+  outline: transparent;
+
+  padding-left: 38px;
+  padding-right: 38px;
+
+  transition: border-color var(--transition-standard);
+}
+
+.modal-form-input:focus {
+  border-color: var(--iris);
+}
+
+.modal-form-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+
+  transform: translateY(-50%);
+
+  stroke: var(--navyblue);
+
+  pointer-events: none;
+
+  transition: stroke var(--transition-standard), fill var(--transition-standard);
+}
+
+.modal-form-input:focus + .modal-form-icon {
+  stroke: var(--iris);
+  fill: var(--iris);
+}
+
+/* Modal Form Comment */
+
+.modal-form-comment {
+  display: block;
+  width: 100%;
+  height: 120px;
+  padding: 8px 16px;
+
+  resize: none;
+
+  border-radius: 4px;
+  border: 1px solid var(--navyblue-modal);
+
+  margin-bottom: 16px;
+
+  outline: transparent;
+
+  font-size: 12px;
+  line-height: 1.1666;
+  letter-spacing: 0.04em;
+}
+
+.modal-form-comment:focus {
+  border-color: var(--iris);
+}
+
+.modal-form-comment::placeholder {
+  font-size: 12px;
+  line-height: 1.1666;
+  letter-spacing: 0.04em;
+
+  color: var(--navyblue-modal);
+}
+
+/* Modal Form Checkbox */
+
+.checkbox-field {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.modal-form-agreement {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-form-checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 16px;
+  height: 16px;
+
+  border: 1px solid var(--navyblue-modal);
+  border-radius: 2px;
+
+  transition: background-color var(--transition-standard);
+
+  cursor: pointer;
+}
+
+.modal-form-checkbox-icon {
+  fill: transparent;
+  transition: fill var(--transition-standard);
+
+}
+
+input[type='checkbox']:checked ~ .modal-form-checkbox {
+  background-color: var(--ocean);
+  border: none;
+}
+
+input[type='checkbox']:focus-visible ~ .modal-form-checkbox {
+  border-color: var(--iris);
+}
+
+input[type='checkbox']:checked ~ .modal-form-checkbox > .modal-form-checkbox-icon {
+  fill: var(--cloud);
+}
+
+.modal-form-agreement-text {
+  font-size: 12px;
+  line-height: 1.1666;
+  letter-spacing: 0.04em;
+  user-select: none;
+}
+
+.modal-form-agreement-link {
+  color: var(--ocean);
+  text-decoration: underline;
+
+  outline: transparent;
+}
+
+.modal-form-agreement-link:focus {
+  border: 1px solid var(--iris);
+}
+
+.modal-form-submit-button {
+  display: block;
+  min-width: 169px;
+  padding: 16px 32px;
+
+  margin: 0 auto;
+
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.64px;
+
+  background-color: var(--iris);
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+  transition: background-color var(--transition-standard);
+}
+
+.modal-form-submit-button:hover,
+.modal-form-submit-button:focus {
+  background-color: var(--ocean);
 }
 
 /* #endregion */
